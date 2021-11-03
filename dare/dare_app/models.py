@@ -24,7 +24,7 @@ class Challenge(models.Model):
     )
 
 
-class ChallengesGroup(models.Model):
+class ChallengeCollection(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, blank=True, default='')
@@ -35,7 +35,7 @@ class ChallengesGroup(models.Model):
 class Party(models.Model):
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
     players = models.ManyToManyField(User)
-    challenges_group = models.ForeignKey(ChallengesGroup, on_delete=models.CASCADE)
+    challenges_group = models.ForeignKey(ChallengeCollection, on_delete=models.CASCADE)
 
 
 class Equipment(models.Model):

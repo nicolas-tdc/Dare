@@ -12,9 +12,9 @@ class ChallengeSerializer(serializers.HyperlinkedModelSerializer):
         ]
 
 
-class ChallengesGroupSerializer(serializers.HyperlinkedModelSerializer):
+class ChallengeCollectionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = ChallengesGroup
+        model = ChallengeCollection
         fields = ['created', 'author', 'title', 'desc', 'nb_of_players']
 
 
