@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User, Group
-from .models import Challenge, ChallengesGroup, Party, Equipment
+from .models import Challenge, ChallengesGroup, Party, Equipment, ProofOfSuccess
 
 
 class ChallengeSerializer(serializers.HyperlinkedModelSerializer):
@@ -28,6 +28,12 @@ class EquipmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Equipment
         fields = ['name']
+
+
+class ProofOfSuccessSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ProofOfSuccess
+        fields = ['file', 'validations']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
