@@ -46,7 +46,7 @@ class ChallengeCollectionViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
-class PartyViewset(viewsets.ModelViewSet):
+class PartyViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows parties to be viewed or edited
     """

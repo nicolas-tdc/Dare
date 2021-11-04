@@ -2,11 +2,11 @@
 
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 from dare_app.views import (
     UserViewSet, GroupViewSet, ChallengeViewSet, ChallengeCollectionViewSet,
-    PartyViewSet, EquimentViewSet, ProofOfSuccessViewSet,
+    PartyViewSet, EquipmentViewSet, ProofOfSuccessViewSet,
 )
 
 """
@@ -18,7 +18,7 @@ router.register(r'groups', GroupViewSet)
 router.register(r'challenges', ChallengeViewSet)
 router.register(r'challenge-collections', ChallengeCollectionViewSet)
 router.register(r'parties', PartyViewSet)
-router.register(r'equipments', EquimentViewSet)
+router.register(r'equipments', EquipmentViewSet)
 router.register(r'proofs-of-success', ProofOfSuccessViewSet)
 
 

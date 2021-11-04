@@ -33,7 +33,7 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = Party
-        fields = ['admin', 'players', 'challenge_group']
+        fields = ['admin', 'players', 'challenge_collection']
 
 
 class EquipmentSerializer(serializers.HyperlinkedModelSerializer):
