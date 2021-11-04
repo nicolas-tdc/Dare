@@ -1,8 +1,13 @@
+"""Models for Dare App."""
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
 class Challenge(models.Model):
+    """
+    Model for single challenges
+    """
     created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, blank=True, default='')
@@ -25,6 +30,9 @@ class Challenge(models.Model):
 
 
 class ChallengeCollection(models.Model):
+    """
+    Model for collections of single challenges.
+    """
     created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, blank=True, default='')
@@ -34,15 +42,24 @@ class ChallengeCollection(models.Model):
 
 
 class Party(models.Model):
+    """
+    Model for parties of players with a chosen challenge collection.
+    """
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
     players = models.ManyToManyField(User)
     challenge_collection = models.ForeignKey(ChallengeCollection, on_delete=models.CASCADE)
 
 
 class Equipment(models.Model):
+    """
+    Model for equipment required for a single challenge.
+    """
     name = models.CharField(max_length=100)
 
 
 class ProofOfSuccess(models.Model):
+    """
+    Model for proof of success for an accomplished single challenge.
+    """
     file = models.FileField(upload_to='TO_BE_DEFINED', editable=False)
     validations = models.IntegerField()
